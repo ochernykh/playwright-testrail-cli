@@ -1,0 +1,19 @@
+{
+  "name": "playwright-testrail-cli",
+  "version": "1.0.0",
+  "description": "Convert Playwright Codegen recordings to TestRail test cases via OpenAI",
+  "type": "module",
+  "scripts": {
+    "ai:testrail": "node scripts/cli.mjs",
+    "ai:watch": "node scripts/watch.mjs"
+  },
+  "dependencies": {
+    "chokidar": "^3.6.0",
+    "dotenv": "^16.4.5",
+    "openai": "^4.52.7"
+  },
+  "devDependencies": {
+    "@playwright/test": "^1.59.1",
+    "@types/node": "^25.6.2"
+  }
+}

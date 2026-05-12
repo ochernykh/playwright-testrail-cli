@@ -1,0 +1,127 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="800" height="720" viewBox="0 0 800 720" font-family="Arial, Helvetica, sans-serif">
+  <defs>
+    <marker id="arr" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#94a3b8"/>
+    </marker>
+    <marker id="arr-yellow" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#ca8a04"/>
+    </marker>
+    <marker id="arr-green" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#16a34a"/>
+    </marker>
+    <filter id="shadow" x="-5%" y="-5%" width="110%" height="120%">
+      <feDropShadow dx="0" dy="2" stdDeviation="3" flood-color="#00000018"/>
+    </filter>
+  </defs>
+
+  <!-- Background -->
+  <rect width="800" height="720" fill="#f1f5f9" rx="16"/>
+
+  <!-- Title bar -->
+  <rect x="0" y="0" width="800" height="62" rx="16" fill="#0f172a"/>
+  <rect x="0" y="46" width="800" height="16" fill="#0f172a"/>
+  <text x="400" y="30" text-anchor="middle" font-size="18" font-weight="bold" fill="white">playwright-testrail-cli</text>
+  <text x="400" y="51" text-anchor="middle" font-size="12" fill="#94a3b8">Схема роботи проекту</text>
+
+  <!-- ══════════════════════════════════════════════════════ -->
+  <!-- BOX 1: Playwright Codegen  y=82..147 -->
+  <!-- ══════════════════════════════════════════════════════ -->
+  <rect x="250" y="82" width="300" height="65" rx="10" fill="#3b82f6" filter="url(#shadow)"/>
+  <!-- step badge -->
+  <circle cx="272" cy="100" r="11" fill="white" opacity="0.25"/>
+  <text x="272" y="104" text-anchor="middle" font-size="11" font-weight="bold" fill="white">1</text>
+  <text x="408" y="108" text-anchor="middle" font-size="14" font-weight="bold" fill="white">Playwright Codegen</text>
+  <text x="408" y="129" text-anchor="middle" font-size="11" fill="#bfdbfe">npx playwright codegen &lt;url&gt;</text>
+
+  <!-- Arrow 1 -->
+  <line x1="400" y1="147" x2="400" y2="175" stroke="#94a3b8" stroke-width="2" marker-end="url(#arr)"/>
+  <text x="414" y="166" font-size="10" fill="#64748b">зберігає .spec.ts</text>
+
+  <!-- ══════════════════════════════════════════════════════ -->
+  <!-- BOX 2: recordings/  y=180..245 -->
+  <!-- ══════════════════════════════════════════════════════ -->
+  <rect x="250" y="180" width="300" height="65" rx="10" fill="#ec4899" filter="url(#shadow)"/>
+  <circle cx="272" cy="198" r="11" fill="white" opacity="0.25"/>
+  <text x="272" y="202" text-anchor="middle" font-size="11" font-weight="bold" fill="white">2</text>
+  <text x="408" y="206" text-anchor="middle" font-size="14" font-weight="bold" fill="white">recordings/*.spec.ts</text>
+  <text x="408" y="228" text-anchor="middle" font-size="11" fill="#fce7f3">TypeScript з діями користувача</text>
+
+  <!-- Side note: ai:watch (right) -->
+  <rect x="578" y="184" width="182" height="57" rx="8" fill="#fefce8" stroke="#ca8a04" stroke-width="1.5" filter="url(#shadow)"/>
+  <text x="669" y="205" text-anchor="middle" font-size="11" font-weight="bold" fill="#713f12">npm run ai:watch</text>
+  <text x="669" y="221" text-anchor="middle" font-size="10" fill="#92400e">авто-запуск при кожному</text>
+  <text x="669" y="235" text-anchor="middle" font-size="10" fill="#92400e">збереженні файлу</text>
+  <line x1="550" y1="212" x2="578" y2="212" stroke="#ca8a04" stroke-width="1.5" stroke-dasharray="5,3" marker-end="url(#arr-yellow)"/>
+
+  <!-- Arrow 2 -->
+  <line x1="400" y1="245" x2="400" y2="273" stroke="#94a3b8" stroke-width="2" marker-end="url(#arr)"/>
+
+  <!-- ══════════════════════════════════════════════════════ -->
+  <!-- BOX 3: CLI  y=278..343 -->
+  <!-- ══════════════════════════════════════════════════════ -->
+  <rect x="250" y="278" width="300" height="65" rx="10" fill="#0ea5e9" filter="url(#shadow)"/>
+  <circle cx="272" cy="296" r="11" fill="white" opacity="0.25"/>
+  <text x="272" y="300" text-anchor="middle" font-size="11" font-weight="bold" fill="white">3</text>
+  <text x="408" y="303" text-anchor="middle" font-size="14" font-weight="bold" fill="white">CLI — npm run ai:testrail</text>
+  <text x="408" y="325" text-anchor="middle" font-size="11" fill="#e0f2fe">валідація файлу + підготовка запиту</text>
+
+  <!-- Side note: System Prompt (left) -->
+  <rect x="45" y="280" width="185" height="62" rx="8" fill="#dcfce7" stroke="#16a34a" stroke-width="1.5" filter="url(#shadow)"/>
+  <text x="137" y="300" text-anchor="middle" font-size="11" font-weight="bold" fill="#14532d">System Prompt</text>
+  <text x="137" y="317" text-anchor="middle" font-size="10" fill="#166534">prompts/</text>
+  <text x="137" y="332" text-anchor="middle" font-size="10" fill="#166534">codegen-to-testrail.md</text>
+  <line x1="230" y1="311" x2="250" y2="311" stroke="#16a34a" stroke-width="1.5" stroke-dasharray="5,3" marker-end="url(#arr-green)"/>
+
+  <!-- Arrow 3 -->
+  <line x1="400" y1="343" x2="400" y2="371" stroke="#94a3b8" stroke-width="2" marker-end="url(#arr)"/>
+  <text x="414" y="362" font-size="10" fill="#64748b">API запит</text>
+
+  <!-- ══════════════════════════════════════════════════════ -->
+  <!-- BOX 4: OpenAI API  y=376..441 -->
+  <!-- ══════════════════════════════════════════════════════ -->
+  <rect x="250" y="376" width="300" height="65" rx="10" fill="#7c3aed" filter="url(#shadow)"/>
+  <circle cx="272" cy="394" r="11" fill="white" opacity="0.25"/>
+  <text x="272" y="398" text-anchor="middle" font-size="11" font-weight="bold" fill="white">4</text>
+  <text x="408" y="401" text-anchor="middle" font-size="14" font-weight="bold" fill="white">OpenAI API</text>
+  <text x="408" y="423" text-anchor="middle" font-size="11" fill="#ede9fe">gpt-4o-mini — генерує тест-кейси</text>
+
+  <!-- Arrow 4 -->
+  <line x1="400" y1="441" x2="400" y2="469" stroke="#94a3b8" stroke-width="2" marker-end="url(#arr)"/>
+  <text x="414" y="460" font-size="10" fill="#64748b">JSON відповідь</text>
+
+  <!-- ══════════════════════════════════════════════════════ -->
+  <!-- BOX 5: ai-output/  y=474..539 -->
+  <!-- ══════════════════════════════════════════════════════ -->
+  <rect x="175" y="474" width="450" height="65" rx="10" fill="#f97316" filter="url(#shadow)"/>
+  <circle cx="200" cy="492" r="11" fill="white" opacity="0.25"/>
+  <text x="200" y="496" text-anchor="middle" font-size="11" font-weight="bold" fill="white">5</text>
+  <text x="405" y="499" text-anchor="middle" font-size="14" font-weight="bold" fill="white">ai-output/</text>
+  <!-- two file types -->
+  <rect x="198" y="511" width="155" height="20" rx="4" fill="white" opacity="0.2"/>
+  <text x="275" y="525" text-anchor="middle" font-size="11" fill="white">*.testrail.json</text>
+  <rect x="447" y="511" width="155" height="20" rx="4" fill="white" opacity="0.2"/>
+  <text x="524" y="525" text-anchor="middle" font-size="11" fill="white">*.testrail.csv</text>
+  <text x="400" y="525" text-anchor="middle" font-size="11" fill="white" font-weight="bold">+</text>
+
+  <!-- Arrow 5 -->
+  <line x1="400" y1="539" x2="400" y2="567" stroke="#94a3b8" stroke-width="2" marker-end="url(#arr)"/>
+  <text x="414" y="558" font-size="10" fill="#64748b">імпорт</text>
+
+  <!-- ══════════════════════════════════════════════════════ -->
+  <!-- BOX 6: TestRail  y=572..637 -->
+  <!-- ══════════════════════════════════════════════════════ -->
+  <rect x="175" y="572" width="450" height="65" rx="10" fill="#0f172a" filter="url(#shadow)"/>
+  <circle cx="200" cy="590" r="11" fill="white" opacity="0.15"/>
+  <text x="200" y="594" text-anchor="middle" font-size="11" font-weight="bold" fill="white">6</text>
+  <text x="405" y="598" text-anchor="middle" font-size="15" font-weight="bold" fill="white">TestRail</text>
+  <text x="405" y="620" text-anchor="middle" font-size="11" fill="#94a3b8">готові manual test cases для QA команди</text>
+
+  <!-- ══════════════════════════════════════════════════════ -->
+  <!-- Legend / commands bar -->
+  <!-- ══════════════════════════════════════════════════════ -->
+  <rect x="30" y="655" width="740" height="52" rx="10" fill="white" stroke="#e2e8f0" stroke-width="1.5"/>
+  <text x="400" y="672" text-anchor="middle" font-size="11" font-weight="bold" fill="#475569">Основні команди</text>
+  <text x="400" y="691" text-anchor="middle" font-size="10" fill="#64748b">
+    один файл: npm run ai:testrail -- file.spec.ts  |  всі: npm run ai:testrail -- --all  |  перезаписати: --force
+  </text>
+</svg>
