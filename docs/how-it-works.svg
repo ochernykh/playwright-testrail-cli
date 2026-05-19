@@ -1,177 +1,211 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 820" font-family="system-ui, sans-serif">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 760" font-family="system-ui, sans-serif">
   <defs>
     <marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto">
       <path d="M0,1 L9,5 L0,9 Z" fill="#555"/>
     </marker>
-    <marker id="arrow-blue" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto">
-      <path d="M0,1 L9,5 L0,9 Z" fill="#3b82f6"/>
+    <marker id="arrow-purple" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto">
+      <path d="M0,1 L9,5 L0,9 Z" fill="#7c3aed"/>
     </marker>
-    <marker id="arrow-green" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto">
-      <path d="M0,1 L9,5 L0,9 Z" fill="#16a34a"/>
+    <marker id="arrow-cyan" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto">
+      <path d="M0,1 L9,5 L0,9 Z" fill="#0891b2"/>
+    </marker>
+    <marker id="arrow-blue" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto">
+      <path d="M0,1 L9,5 L0,9 Z" fill="#1d4ed8"/>
     </marker>
     <marker id="arrow-red" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto">
       <path d="M0,1 L9,5 L0,9 Z" fill="#dc2626"/>
     </marker>
+    <marker id="arrow-green" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto">
+      <path d="M0,1 L9,5 L0,9 Z" fill="#16a34a"/>
+    </marker>
   </defs>
 
   <!-- Background -->
-  <rect width="900" height="820" fill="#f8fafc" rx="12"/>
+  <rect width="1200" height="760" fill="#f8fafc" rx="12"/>
 
   <!-- Title -->
-  <text x="450" y="38" text-anchor="middle" font-size="18" font-weight="700" fill="#0f172a">playwright-testrail-cli — Як це працює</text>
+  <text x="600" y="36" text-anchor="middle" font-size="17" font-weight="700" fill="#0f172a">playwright-testrail-cli — Як це працює</text>
 
-  <!-- ═══ COLUMN 1 — ai:explore ═══ -->
+  <!-- ═══ COL 1: ai:explore (xc=130) ═══ -->
+  <text x="130" y="62" text-anchor="middle" font-size="12" font-weight="600" fill="#7c3aed">ai:explore</text>
 
-  <text x="150" y="72" text-anchor="middle" font-size="12" font-weight="600" fill="#7c3aed">ai:explore</text>
+  <rect x="40" y="72" width="180" height="40" rx="8" fill="#ede9fe" stroke="#7c3aed" stroke-width="1.5"/>
+  <text x="130" y="87" text-anchor="middle" font-size="11" font-weight="600" fill="#4c1d95">URL + --section</text>
+  <text x="130" y="102" text-anchor="middle" font-size="10" fill="#6d28d9">(необов'язково)</text>
 
-  <rect x="60" y="82" width="180" height="40" rx="8" fill="#ede9fe" stroke="#7c3aed" stroke-width="1.5"/>
-  <text x="150" y="97" text-anchor="middle" font-size="11" font-weight="600" fill="#4c1d95">URL + --section</text>
-  <text x="150" y="112" text-anchor="middle" font-size="10" fill="#6d28d9">(необов'язково)</text>
+  <line x1="130" y1="112" x2="130" y2="130" stroke="#7c3aed" stroke-width="1.5" marker-end="url(#arrow-purple)"/>
 
-  <line x1="150" y1="122" x2="150" y2="144" stroke="#555" stroke-width="1.5" marker-end="url(#arrow)"/>
+  <rect x="40" y="132" width="180" height="50" rx="8" fill="#fff" stroke="#94a3b8" stroke-width="1.5"/>
+  <text x="130" y="152" text-anchor="middle" font-size="11" font-weight="600" fill="#334155">Chromium headless</text>
+  <text x="130" y="167" text-anchor="middle" font-size="10" fill="#64748b">goto + click tabs</text>
 
-  <rect x="60" y="146" width="180" height="50" rx="8" fill="#fff" stroke="#94a3b8" stroke-width="1.5"/>
-  <text x="150" y="166" text-anchor="middle" font-size="11" font-weight="600" fill="#334155">Chromium headless</text>
-  <text x="150" y="181" text-anchor="middle" font-size="10" fill="#64748b">goto + click tabs</text>
+  <line x1="130" y1="182" x2="130" y2="200" stroke="#7c3aed" stroke-width="1.5" marker-end="url(#arrow-purple)"/>
 
-  <line x1="150" y1="196" x2="150" y2="218" stroke="#555" stroke-width="1.5" marker-end="url(#arrow)"/>
+  <rect x="40" y="202" width="180" height="50" rx="8" fill="#f0fdf4" stroke="#16a34a" stroke-width="1.5"/>
+  <text x="130" y="222" text-anchor="middle" font-size="11" font-weight="600" fill="#14532d">ariaSnapshot()</text>
+  <text x="130" y="237" text-anchor="middle" font-size="10" fill="#16a34a">main + усі таби</text>
 
-  <rect x="60" y="220" width="180" height="50" rx="8" fill="#f0fdf4" stroke="#16a34a" stroke-width="1.5"/>
-  <text x="150" y="240" text-anchor="middle" font-size="11" font-weight="600" fill="#14532d">ariaSnapshot()</text>
-  <text x="150" y="255" text-anchor="middle" font-size="10" fill="#16a34a">main + усі таби</text>
+  <line x1="130" y1="252" x2="130" y2="270" stroke="#7c3aed" stroke-width="1.5" marker-end="url(#arrow-purple)"/>
 
-  <line x1="150" y1="270" x2="150" y2="292" stroke="#555" stroke-width="1.5" marker-end="url(#arrow)"/>
+  <rect x="40" y="272" width="180" height="50" rx="8" fill="#fef3c7" stroke="#d97706" stroke-width="1.5"/>
+  <text x="130" y="292" text-anchor="middle" font-size="11" font-weight="600" fill="#78350f">GPT-4o</text>
+  <text x="130" y="307" text-anchor="middle" font-size="10" fill="#92400e">explorer-seed.md</text>
 
-  <rect x="60" y="294" width="180" height="50" rx="8" fill="#fef3c7" stroke="#d97706" stroke-width="1.5"/>
-  <text x="150" y="314" text-anchor="middle" font-size="11" font-weight="600" fill="#78350f">GPT-4o</text>
-  <text x="150" y="329" text-anchor="middle" font-size="10" fill="#92400e">explorer-seed.md</text>
+  <line x1="130" y1="322" x2="130" y2="340" stroke="#7c3aed" stroke-width="1.5" marker-end="url(#arrow-purple)"/>
 
-  <line x1="150" y1="344" x2="150" y2="366" stroke="#555" stroke-width="1.5" marker-end="url(#arrow)"/>
-
-  <rect x="60" y="368" width="180" height="40" rx="8" fill="#ede9fe" stroke="#7c3aed" stroke-width="1.5"/>
-  <text x="150" y="383" text-anchor="middle" font-size="11" font-weight="600" fill="#4c1d95">specs/*.md</text>
-  <text x="150" y="398" text-anchor="middle" font-size="10" fill="#6d28d9">план тестування</text>
-
-
-  <!-- ═══ COLUMN 2 — ai:run ═══ -->
-
-  <text x="450" y="72" text-anchor="middle" font-size="12" font-weight="600" fill="#1d4ed8">ai:run</text>
-
-  <rect x="360" y="82" width="180" height="40" rx="8" fill="#dbeafe" stroke="#3b82f6" stroke-width="1.5"/>
-  <text x="450" y="97" text-anchor="middle" font-size="11" font-weight="600" fill="#1e3a8a">--story "текст"</text>
-  <text x="450" y="112" text-anchor="middle" font-size="10" fill="#1d4ed8">--output file.spec.ts</text>
-
-  <line x1="450" y1="122" x2="450" y2="144" stroke="#3b82f6" stroke-width="1.5" marker-end="url(#arrow-blue)"/>
-
-  <rect x="360" y="146" width="180" height="50" rx="8" fill="#f0fdf4" stroke="#16a34a" stroke-width="1.5"/>
-  <text x="450" y="164" text-anchor="middle" font-size="10" fill="#15803d">Phase 0</text>
-  <text x="450" y="178" text-anchor="middle" font-size="11" font-weight="600" fill="#14532d">ARIA snapshot</text>
-  <text x="450" y="191" text-anchor="middle" font-size="10" fill="#16a34a">headless Chromium</text>
-
-  <line x1="450" y1="196" x2="450" y2="218" stroke="#3b82f6" stroke-width="1.5" marker-end="url(#arrow-blue)"/>
-
-  <rect x="360" y="220" width="180" height="50" rx="8" fill="#fef3c7" stroke="#d97706" stroke-width="1.5"/>
-  <text x="450" y="238" text-anchor="middle" font-size="10" fill="#92400e">Phase 1</text>
-  <text x="450" y="252" text-anchor="middle" font-size="11" font-weight="600" fill="#78350f">GPT-4o → кроки JSON</text>
-  <text x="450" y="265" text-anchor="middle" font-size="10" fill="#92400e">story-to-steps.md</text>
-
-  <line x1="450" y1="270" x2="450" y2="292" stroke="#3b82f6" stroke-width="1.5" marker-end="url(#arrow-blue)"/>
-
-  <rect x="360" y="294" width="180" height="70" rx="8" fill="#fff" stroke="#94a3b8" stroke-width="1.5"/>
-  <text x="450" y="312" text-anchor="middle" font-size="10" fill="#64748b">Phase 2</text>
-  <text x="450" y="326" text-anchor="middle" font-size="11" font-weight="600" fill="#334155">Playwright execute</text>
-  <text x="450" y="340" text-anchor="middle" font-size="10" fill="#64748b">getByRole / getByLabel</text>
-  <text x="450" y="354" text-anchor="middle" font-size="10" fill="#16a34a">↻ re-plan після tab</text>
-
-  <line x1="450" y1="364" x2="450" y2="386" stroke="#3b82f6" stroke-width="1.5" marker-end="url(#arrow-blue)"/>
-
-  <rect x="360" y="388" width="180" height="50" rx="8" fill="#dbeafe" stroke="#3b82f6" stroke-width="1.5"/>
-  <text x="450" y="406" text-anchor="middle" font-size="10" fill="#1d4ed8">Phase 3</text>
-  <text x="450" y="420" text-anchor="middle" font-size="11" font-weight="600" fill="#1e3a8a">recordings/*.spec.ts</text>
-  <text x="450" y="433" text-anchor="middle" font-size="10" fill="#1d4ed8">new / append</text>
-
-  <line x1="450" y1="438" x2="450" y2="460" stroke="#3b82f6" stroke-width="1.5" marker-end="url(#arrow-blue)"/>
-
-  <rect x="360" y="462" width="180" height="50" rx="8" fill="#fce7f3" stroke="#db2777" stroke-width="1.5"/>
-  <text x="450" y="480" text-anchor="middle" font-size="10" fill="#831843">Phase 4</text>
-  <text x="450" y="494" text-anchor="middle" font-size="11" font-weight="600" fill="#9d174d">TestRail JSON + CSV</text>
-  <text x="450" y="507" text-anchor="middle" font-size="10" fill="#be185d">ai-output/</text>
-
-  <!-- ARIA fallback (dashed, left of Phase 2) -->
-  <rect x="175" y="530" width="170" height="55" rx="8" fill="#fee2e2" stroke="#dc2626" stroke-width="1.5" stroke-dasharray="5,3"/>
-  <text x="260" y="549" text-anchor="middle" font-size="11" font-weight="600" fill="#991b1b">ARIA fallback</text>
-  <text x="260" y="563" text-anchor="middle" font-size="10" fill="#dc2626">крок не знайдено →</text>
-  <text x="260" y="576" text-anchor="middle" font-size="10" fill="#dc2626">GPT-4o виправляє</text>
-
-  <!-- Arrow: Phase 2 → fallback -->
-  <path d="M360,329 Q320,329 320,557 Q320,557 345,557" fill="none" stroke="#dc2626" stroke-width="1.5" stroke-dasharray="4,3" marker-end="url(#arrow-red)"/>
-  <text x="296" y="450" font-size="9" fill="#dc2626" transform="rotate(-90,296,450)">✗ крок</text>
-
-  <!-- Arrow: fallback → Phase 2 -->
-  <path d="M345,542 Q335,542 335,329 Q335,329 360,329" fill="none" stroke="#16a34a" stroke-width="1.5" marker-end="url(#arrow-green)"/>
-  <text x="314" y="420" font-size="9" fill="#16a34a" transform="rotate(-90,314,420)">виправлено</text>
+  <rect x="40" y="342" width="180" height="40" rx="8" fill="#ede9fe" stroke="#7c3aed" stroke-width="1.5"/>
+  <text x="130" y="357" text-anchor="middle" font-size="11" font-weight="600" fill="#4c1d95">specs/*.md</text>
+  <text x="130" y="372" text-anchor="middle" font-size="10" fill="#6d28d9">план тестування</text>
 
 
-  <!-- ═══ COLUMN 3 — ai:heal ═══ -->
+  <!-- ═══ COL 2: ai:scan (xc=370) ═══ -->
+  <text x="370" y="62" text-anchor="middle" font-size="12" font-weight="600" fill="#0891b2">ai:scan</text>
 
-  <text x="750" y="72" text-anchor="middle" font-size="12" font-weight="600" fill="#b45309">ai:heal</text>
+  <rect x="280" y="72" width="180" height="40" rx="8" fill="#e0f2fe" stroke="#0891b2" stroke-width="1.5"/>
+  <text x="370" y="87" text-anchor="middle" font-size="11" font-weight="600" fill="#0c4a6e">URL + --context</text>
+  <text x="370" y="102" text-anchor="middle" font-size="10" fill="#0369a1">(--context необов'язково)</text>
 
-  <rect x="660" y="82" width="180" height="40" rx="8" fill="#fef3c7" stroke="#d97706" stroke-width="1.5"/>
-  <text x="750" y="97" text-anchor="middle" font-size="11" font-weight="600" fill="#78350f">--file / --dir</text>
-  <text x="750" y="112" text-anchor="middle" font-size="10" fill="#92400e">recordings/*.spec.ts</text>
+  <line x1="370" y1="112" x2="370" y2="130" stroke="#0891b2" stroke-width="1.5" marker-end="url(#arrow-cyan)"/>
 
-  <line x1="750" y1="122" x2="750" y2="144" stroke="#555" stroke-width="1.5" marker-end="url(#arrow)"/>
+  <rect x="280" y="132" width="180" height="50" rx="8" fill="#f0fdf4" stroke="#16a34a" stroke-width="1.5"/>
+  <text x="370" y="152" text-anchor="middle" font-size="11" font-weight="600" fill="#14532d">ARIA snapshot</text>
+  <text x="370" y="167" text-anchor="middle" font-size="10" fill="#16a34a">headless Chromium</text>
 
-  <rect x="660" y="146" width="180" height="50" rx="8" fill="#fff" stroke="#94a3b8" stroke-width="1.5"/>
-  <text x="750" y="166" text-anchor="middle" font-size="11" font-weight="600" fill="#334155">npx playwright test</text>
-  <text x="750" y="181" text-anchor="middle" font-size="10" fill="#64748b">--reporter=list</text>
+  <line x1="370" y1="182" x2="370" y2="200" stroke="#0891b2" stroke-width="1.5" marker-end="url(#arrow-cyan)"/>
 
-  <line x1="840" y1="171" x2="855" y2="171" stroke="#16a34a" stroke-width="1.5"/>
-  <text x="858" y="175" font-size="10" fill="#16a34a">✓ skip</text>
+  <rect x="280" y="202" width="180" height="50" rx="8" fill="#fef3c7" stroke="#d97706" stroke-width="1.5"/>
+  <text x="370" y="222" text-anchor="middle" font-size="11" font-weight="600" fill="#78350f">GPT-4o</text>
+  <text x="370" y="237" text-anchor="middle" font-size="10" fill="#92400e">page-to-tests.md</text>
 
-  <line x1="750" y1="196" x2="750" y2="218" stroke="#555" stroke-width="1.5" marker-end="url(#arrow)"/>
+  <line x1="370" y1="252" x2="370" y2="270" stroke="#0891b2" stroke-width="1.5" marker-end="url(#arrow-cyan)"/>
 
-  <rect x="660" y="220" width="180" height="50" rx="8" fill="#f0fdf4" stroke="#16a34a" stroke-width="1.5"/>
-  <text x="750" y="240" text-anchor="middle" font-size="11" font-weight="600" fill="#14532d">ARIA snapshot</text>
-  <text x="750" y="255" text-anchor="middle" font-size="10" fill="#16a34a">поточний стан UI</text>
+  <rect x="280" y="272" width="180" height="50" rx="8" fill="#e0f2fe" stroke="#0891b2" stroke-width="2"/>
+  <text x="370" y="290" text-anchor="middle" font-size="11" font-weight="600" fill="#0c4a6e">plans/*.plan.json</text>
+  <text x="370" y="305" text-anchor="middle" font-size="10" fill="#0369a1">--dry-run: зупинитись</text>
+  <text x="370" y="318" text-anchor="middle" font-size="10" fill="#0369a1">та відредагувати</text>
 
-  <line x1="750" y1="270" x2="750" y2="292" stroke="#555" stroke-width="1.5" marker-end="url(#arrow)"/>
+  <!-- Arrow: plans → ai:run execute (horizontal) -->
+  <line x1="460" y1="297" x2="618" y2="297" stroke="#0891b2" stroke-width="1.5" stroke-dasharray="5,3" marker-end="url(#arrow-cyan)"/>
+  <text x="538" y="290" text-anchor="middle" font-size="9" font-weight="600" fill="#0891b2">--from-plan</text>
 
-  <rect x="660" y="294" width="180" height="50" rx="8" fill="#fef3c7" stroke="#d97706" stroke-width="1.5"/>
-  <text x="750" y="314" text-anchor="middle" font-size="11" font-weight="600" fill="#78350f">GPT-4o фіксить</text>
-  <text x="750" y="329" text-anchor="middle" font-size="10" fill="#92400e">локатори → новий код</text>
 
-  <line x1="750" y1="344" x2="750" y2="366" stroke="#555" stroke-width="1.5" marker-end="url(#arrow)"/>
+  <!-- ═══ COL 3: ai:run (xc=720) ═══ -->
+  <text x="720" y="62" text-anchor="middle" font-size="12" font-weight="600" fill="#1d4ed8">ai:run</text>
 
-  <rect x="660" y="368" width="180" height="50" rx="8" fill="#fff" stroke="#94a3b8" stroke-width="1.5"/>
-  <text x="750" y="388" text-anchor="middle" font-size="11" font-weight="600" fill="#334155">re-run тесту</text>
-  <text x="750" y="403" text-anchor="middle" font-size="10" fill="#64748b">до 3 спроб</text>
+  <rect x="630" y="72" width="180" height="40" rx="8" fill="#dbeafe" stroke="#3b82f6" stroke-width="1.5"/>
+  <text x="720" y="87" text-anchor="middle" font-size="11" font-weight="600" fill="#1e3a8a">stories/*.md</text>
+  <text x="720" y="102" text-anchor="middle" font-size="10" fill="#1d4ed8">--output file.spec.ts</text>
 
-  <!-- retry loop arrow -->
-  <path d="M840,393 Q880,393 880,307 Q880,220 840,220" fill="none" stroke="#94a3b8" stroke-width="1.5" stroke-dasharray="4,3" marker-end="url(#arrow)"/>
-  <text x="884" y="312" font-size="9" fill="#94a3b8" transform="rotate(90,884,312)">retry</text>
+  <line x1="720" y1="112" x2="720" y2="130" stroke="#1d4ed8" stroke-width="1.5" marker-end="url(#arrow-blue)"/>
 
-  <line x1="750" y1="418" x2="750" y2="440" stroke="#555" stroke-width="1.5" marker-end="url(#arrow)"/>
+  <rect x="630" y="132" width="180" height="52" rx="8" fill="#f0fdf4" stroke="#16a34a" stroke-width="1.5"/>
+  <text x="720" y="149" text-anchor="middle" font-size="10" fill="#15803d">Phase 0</text>
+  <text x="720" y="163" text-anchor="middle" font-size="11" font-weight="600" fill="#14532d">ARIA snapshot</text>
+  <text x="720" y="177" text-anchor="middle" font-size="9" fill="#6b7280">skip if --from-plan</text>
 
-  <rect x="660" y="442" width="180" height="40" rx="8" fill="#fef3c7" stroke="#d97706" stroke-width="1.5"/>
-  <text x="750" y="457" text-anchor="middle" font-size="11" font-weight="600" fill="#78350f">patched spec</text>
-  <text x="750" y="472" text-anchor="middle" font-size="10" fill="#92400e">або restored оригінал</text>
+  <line x1="720" y1="184" x2="720" y2="200" stroke="#1d4ed8" stroke-width="1.5" marker-end="url(#arrow-blue)"/>
+
+  <rect x="630" y="202" width="180" height="52" rx="8" fill="#fef3c7" stroke="#d97706" stroke-width="1.5"/>
+  <text x="720" y="219" text-anchor="middle" font-size="10" fill="#92400e">Phase 1</text>
+  <text x="720" y="233" text-anchor="middle" font-size="11" font-weight="600" fill="#78350f">GPT-4o → кроки</text>
+  <text x="720" y="247" text-anchor="middle" font-size="9" fill="#6b7280">skip if --from-plan</text>
+
+  <line x1="720" y1="254" x2="720" y2="270" stroke="#1d4ed8" stroke-width="1.5" marker-end="url(#arrow-blue)"/>
+
+  <!-- Phase 2: Execute, also receives from-plan arrow -->
+  <rect x="630" y="272" width="180" height="60" rx="8" fill="#fff" stroke="#94a3b8" stroke-width="1.5"/>
+  <text x="720" y="289" text-anchor="middle" font-size="10" fill="#64748b">Phase 2</text>
+  <text x="720" y="303" text-anchor="middle" font-size="11" font-weight="600" fill="#334155">Playwright execute</text>
+  <text x="720" y="317" text-anchor="middle" font-size="10" fill="#64748b">getByRole / getByLabel</text>
+  <text x="720" y="329" text-anchor="middle" font-size="9" fill="#16a34a">↻ re-plan після tab</text>
+
+  <line x1="720" y1="332" x2="720" y2="350" stroke="#1d4ed8" stroke-width="1.5" marker-end="url(#arrow-blue)"/>
+
+  <rect x="630" y="352" width="180" height="42" rx="8" fill="#dbeafe" stroke="#3b82f6" stroke-width="1.5"/>
+  <text x="720" y="368" text-anchor="middle" font-size="10" fill="#1d4ed8">Phase 3</text>
+  <text x="720" y="382" text-anchor="middle" font-size="11" font-weight="600" fill="#1e3a8a">recordings/*.spec.ts</text>
+
+  <line x1="720" y1="394" x2="720" y2="412" stroke="#1d4ed8" stroke-width="1.5" marker-end="url(#arrow-blue)"/>
+
+  <rect x="630" y="414" width="180" height="42" rx="8" fill="#fce7f3" stroke="#db2777" stroke-width="1.5"/>
+  <text x="720" y="430" text-anchor="middle" font-size="10" fill="#831843">Phase 4</text>
+  <text x="720" y="444" text-anchor="middle" font-size="11" font-weight="600" fill="#9d174d">TestRail JSON + CSV</text>
+
+  <!-- ARIA fallback loop -->
+  <rect x="478" y="472" width="150" height="55" rx="8" fill="#fee2e2" stroke="#dc2626" stroke-width="1.5" stroke-dasharray="5,3"/>
+  <text x="553" y="491" text-anchor="middle" font-size="11" font-weight="600" fill="#991b1b">ARIA fallback</text>
+  <text x="553" y="505" text-anchor="middle" font-size="10" fill="#dc2626">крок не знайдено →</text>
+  <text x="553" y="518" text-anchor="middle" font-size="10" fill="#dc2626">GPT-4o виправляє</text>
+
+  <path d="M630,302 Q600,302 600,499 Q600,499 628,499" fill="none" stroke="#dc2626" stroke-width="1.5" stroke-dasharray="4,3" marker-end="url(#arrow-red)"/>
+  <text x="582" y="405" font-size="9" fill="#dc2626" transform="rotate(-90,582,405)">✗ крок</text>
+
+  <path d="M628,485 Q612,485 612,302 Q612,302 630,302" fill="none" stroke="#16a34a" stroke-width="1.5" marker-end="url(#arrow-green)"/>
+  <text x="596" y="385" font-size="9" fill="#16a34a" transform="rotate(-90,596,385)">виправлено</text>
+
+
+  <!-- ═══ COL 4: ai:heal (xc=1060) ═══ -->
+  <text x="1060" y="62" text-anchor="middle" font-size="12" font-weight="600" fill="#b45309">ai:heal</text>
+
+  <rect x="970" y="72" width="180" height="40" rx="8" fill="#fef3c7" stroke="#d97706" stroke-width="1.5"/>
+  <text x="1060" y="87" text-anchor="middle" font-size="11" font-weight="600" fill="#78350f">--file / --dir</text>
+  <text x="1060" y="102" text-anchor="middle" font-size="10" fill="#92400e">recordings/*.spec.ts</text>
+
+  <line x1="1060" y1="112" x2="1060" y2="130" stroke="#555" stroke-width="1.5" marker-end="url(#arrow)"/>
+
+  <rect x="970" y="132" width="180" height="50" rx="8" fill="#fff" stroke="#94a3b8" stroke-width="1.5"/>
+  <text x="1060" y="152" text-anchor="middle" font-size="11" font-weight="600" fill="#334155">npx playwright test</text>
+  <text x="1060" y="167" text-anchor="middle" font-size="10" fill="#64748b">--reporter=list</text>
+  <line x1="1150" y1="159" x2="1163" y2="159" stroke="#16a34a" stroke-width="1.5"/>
+  <text x="1166" y="163" font-size="10" fill="#16a34a">✓ skip</text>
+
+  <line x1="1060" y1="182" x2="1060" y2="200" stroke="#555" stroke-width="1.5" marker-end="url(#arrow)"/>
+
+  <rect x="970" y="202" width="180" height="50" rx="8" fill="#f0fdf4" stroke="#16a34a" stroke-width="1.5"/>
+  <text x="1060" y="222" text-anchor="middle" font-size="11" font-weight="600" fill="#14532d">ARIA snapshot</text>
+  <text x="1060" y="237" text-anchor="middle" font-size="10" fill="#16a34a">поточний стан UI</text>
+
+  <line x1="1060" y1="252" x2="1060" y2="270" stroke="#555" stroke-width="1.5" marker-end="url(#arrow)"/>
+
+  <rect x="970" y="272" width="180" height="50" rx="8" fill="#fef3c7" stroke="#d97706" stroke-width="1.5"/>
+  <text x="1060" y="292" text-anchor="middle" font-size="11" font-weight="600" fill="#78350f">GPT-4o фіксить</text>
+  <text x="1060" y="307" text-anchor="middle" font-size="10" fill="#92400e">локатори → новий код</text>
+
+  <line x1="1060" y1="322" x2="1060" y2="340" stroke="#555" stroke-width="1.5" marker-end="url(#arrow)"/>
+
+  <rect x="970" y="342" width="180" height="42" rx="8" fill="#fff" stroke="#94a3b8" stroke-width="1.5"/>
+  <text x="1060" y="359" text-anchor="middle" font-size="11" font-weight="600" fill="#334155">re-run тесту</text>
+  <text x="1060" y="374" text-anchor="middle" font-size="10" fill="#64748b">до 3 спроб</text>
+
+  <path d="M1150,363 Q1185,363 1185,227 Q1185,227 1150,227" fill="none" stroke="#94a3b8" stroke-width="1.5" stroke-dasharray="4,3" marker-end="url(#arrow)"/>
+  <text x="1188" y="300" font-size="9" fill="#94a3b8" transform="rotate(90,1188,300)">retry</text>
+
+  <line x1="1060" y1="384" x2="1060" y2="402" stroke="#555" stroke-width="1.5" marker-end="url(#arrow)"/>
+
+  <rect x="970" y="404" width="180" height="40" rx="8" fill="#fef3c7" stroke="#d97706" stroke-width="1.5"/>
+  <text x="1060" y="419" text-anchor="middle" font-size="11" font-weight="600" fill="#78350f">patched spec</text>
+  <text x="1060" y="434" text-anchor="middle" font-size="10" fill="#92400e">або restored оригінал</text>
 
 
   <!-- ═══ LEGEND ═══ -->
+  <rect x="40" y="558" width="1120" height="172" rx="8" fill="#fff" stroke="#e2e8f0" stroke-width="1.5"/>
+  <text x="600" y="578" text-anchor="middle" font-size="12" font-weight="700" fill="#334155">Команди</text>
 
-  <rect x="60" y="680" width="780" height="120" rx="8" fill="#fff" stroke="#e2e8f0" stroke-width="1.5"/>
-  <text x="450" y="700" text-anchor="middle" font-size="12" font-weight="700" fill="#334155">Команди</text>
+  <rect x="60" y="590" width="12" height="12" rx="2" fill="#ede9fe" stroke="#7c3aed" stroke-width="1"/>
+  <text x="78" y="601" font-size="11" fill="#334155"><tspan font-weight="600">ai:explore</tspan>  розвідка сайту, кліки по табах → markdown план у specs/</text>
 
-  <rect x="80" y="712" width="12" height="12" rx="2" fill="#ede9fe" stroke="#7c3aed" stroke-width="1"/>
-  <text x="98" y="723" font-size="11" fill="#334155"><tspan font-weight="600">ai:explore</tspan>  розвідка сайту, кліки по табах → markdown план у specs/</text>
+  <rect x="60" y="612" width="12" height="12" rx="2" fill="#e0f2fe" stroke="#0891b2" stroke-width="1"/>
+  <text x="78" y="623" font-size="11" fill="#334155"><tspan font-weight="600">ai:scan</tspan>  URL → ARIA snapshot → GPT-4o → plans/*.plan.json (--dry-run зупинитись) → spec + TestRail</text>
 
-  <rect x="80" y="732" width="12" height="12" rx="2" fill="#dbeafe" stroke="#3b82f6" stroke-width="1"/>
-  <text x="98" y="743" font-size="11" fill="#334155"><tspan font-weight="600">ai:run</tspan>  story → ARIA snapshot → GPT-4o → Playwright execute → spec + TestRail</text>
+  <rect x="60" y="634" width="12" height="12" rx="2" fill="#dbeafe" stroke="#3b82f6" stroke-width="1"/>
+  <text x="78" y="645" font-size="11" fill="#334155"><tspan font-weight="600">ai:run</tspan>  story / --from-plan → ARIA snapshot → GPT-4o → Playwright execute → spec + TestRail</text>
 
-  <rect x="80" y="752" width="12" height="12" rx="2" fill="#fef3c7" stroke="#d97706" stroke-width="1"/>
-  <text x="98" y="763" font-size="11" fill="#334155"><tspan font-weight="600">ai:heal</tspan>  запуск тестів → ARIA snapshot → GPT-4o фіксить локатори (до 3 спроб)</text>
+  <rect x="60" y="656" width="12" height="12" rx="2" fill="#fef3c7" stroke="#d97706" stroke-width="1"/>
+  <text x="78" y="667" font-size="11" fill="#334155"><tspan font-weight="600">ai:heal</tspan>  запуск тестів → ARIA snapshot → GPT-4o фіксить локатори (до 3 спроб)</text>
 
-  <rect x="80" y="772" width="12" height="12" rx="2" fill="#fce7f3" stroke="#db2777" stroke-width="1"/>
-  <text x="98" y="783" font-size="11" fill="#334155"><tspan font-weight="600">ai:testrail</tspan>  конвертація будь-якого .spec.ts → TestRail JSON + CSV</text>
+  <rect x="60" y="678" width="12" height="12" rx="2" fill="#fce7f3" stroke="#db2777" stroke-width="1"/>
+  <text x="78" y="689" font-size="11" fill="#334155"><tspan font-weight="600">ai:testrail</tspan>  конвертація будь-якого .spec.ts → TestRail JSON + CSV</text>
+
+  <rect x="60" y="700" width="12" height="12" rx="2" fill="#fee2e2" stroke="#dc2626" stroke-width="1" stroke-dasharray="3,2"/>
+  <text x="78" y="711" font-size="11" fill="#334155"><tspan font-weight="600">ARIA fallback</tspan>  крок не знайдено під час виконання → GPT-4o виправляє локатор автоматично</text>
 </svg>
