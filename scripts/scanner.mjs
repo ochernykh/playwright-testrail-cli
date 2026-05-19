@@ -5,7 +5,6 @@ import { execFileSync } from 'child_process';
 import { chromium } from '@playwright/test';
 import OpenAI from 'openai';
 
-const AI_MODEL     = 'gpt-4o';
 const MAX_ARIA_CHARS = 12_000;
 const PLANS_DIR    = 'plans';
 
@@ -17,7 +16,11 @@ function loadConfig() {
     console.error('Помилка: OPENAI_API_KEY не встановлений у .env файлі.');
     process.exit(1);
   }
-  return { apiKey };
+  return {
+    apiKey,
+    baseURL: process.env.OPENAI_BASE_URL || undefined,
+    model:   process.env.OPENAI_MODEL    || 'gpt-4o',
+  };
 }
 
 function printUsage() {
@@ -104,7 +107,7 @@ async function main() {
   }
 
   const config = loadConfig();
-  const client = new OpenAI({ apiKey: config.apiKey });
+  const client = new OpenAI({ apiKey: config.apiKey, baseURL: config.baseURL });
 
   const systemPrompt = await fs.readFile(path.resolve('prompts/page-to-tests.md'), 'utf8');
 
@@ -147,7 +150,7 @@ async function main() {
   let plan;
   try {
     const resp = await client.chat.completions.create({
-      model: AI_MODEL,
+      model: config.model,
       response_format: { type: 'json_object' },
       messages: [
         { role: 'system', content: systemPrompt },

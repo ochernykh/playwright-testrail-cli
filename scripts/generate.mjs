@@ -20,14 +20,15 @@ function loadConfig() {
   }
   return {
     apiKey,
-    model: process.env.OPENAI_MODEL || 'gpt-4o-mini',
+    baseURL: process.env.OPENAI_BASE_URL || undefined,
+    model:   process.env.OPENAI_MODEL    || 'gpt-4o-mini',
   };
 }
 
 function getClient() {
   if (!_client) {
     const config = loadConfig();
-    _client = new OpenAI({ apiKey: config.apiKey });
+    _client = new OpenAI({ apiKey: config.apiKey, baseURL: config.baseURL });
     _model = config.model;
   }
   return { client: _client, model: _model };

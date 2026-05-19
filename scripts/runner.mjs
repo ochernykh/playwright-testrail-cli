@@ -5,10 +5,10 @@ import { chromium, expect } from '@playwright/test';
 import OpenAI from 'openai';
 import { convertFile } from './generate.mjs';
 
-const AI_MODEL      = 'gpt-4o';
-const AI_MODEL_FAST = 'gpt-4o-mini';
 const STEP_TIMEOUT_MS = 8_000;
 const RECORDINGS_DIR = 'recordings';
+const AI_MODEL      = process.env.OPENAI_MODEL      || 'gpt-4o';
+const AI_MODEL_FAST = process.env.OPENAI_MODEL_FAST || 'gpt-4o-mini';
 const PLANS_DIR      = 'plans';
 const MAX_ARIA_CHARS = 12_000;
 
@@ -20,7 +20,12 @@ function loadConfig() {
     console.error('Помилка: OPENAI_API_KEY не встановлений у .env файлі.');
     process.exit(1);
   }
-  return { apiKey };
+  return {
+    apiKey,
+    baseURL:    process.env.OPENAI_BASE_URL    || undefined,
+    model:      process.env.OPENAI_MODEL       || 'gpt-4o',
+    modelFast:  process.env.OPENAI_MODEL_FAST  || 'gpt-4o-mini',
+  };
 }
 
 function printUsage() {
@@ -351,7 +356,7 @@ async function main() {
   }
 
   const config = loadConfig();
-  const client = new OpenAI({ apiKey: config.apiKey });
+  const client = new OpenAI({ apiKey: config.apiKey, baseURL: config.baseURL });
 
   const [ariaFallbackPrompt, replanStepsPrompt] = await Promise.all([
     fs.readFile(path.resolve('prompts/aria-fallback.md'), 'utf8'),

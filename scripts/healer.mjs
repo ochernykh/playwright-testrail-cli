@@ -7,9 +7,9 @@ import { promisify } from 'util';
 import OpenAI from 'openai';
 
 const execAsync = promisify(exec);
-const AI_MODEL = 'gpt-4o-mini';
 const MAX_ARIA_CHARS = 12_000;
 const MAX_HEAL_ATTEMPTS = 3;
+const AI_MODEL = process.env.OPENAI_MODEL || 'gpt-4o-mini';
 
 // ─── Config ──────────────────────────────────────────────────────────────────
 
@@ -19,7 +19,11 @@ function loadConfig() {
     console.error('Помилка: OPENAI_API_KEY не встановлений у .env файлі.');
     process.exit(1);
   }
-  return { apiKey };
+  return {
+    apiKey,
+    baseURL: process.env.OPENAI_BASE_URL || undefined,
+    model:   process.env.OPENAI_MODEL    || 'gpt-4o-mini',
+  };
 }
 
 function printUsage() {
@@ -166,7 +170,7 @@ async function main() {
   if (!opts.file && !opts.dir) { printUsage(); process.exit(0); }
 
   const config = loadConfig();
-  const client = new OpenAI({ apiKey: config.apiKey });
+  const client = new OpenAI({ apiKey: config.apiKey, baseURL: config.baseURL });
 
   let files = [];
   if (opts.file) {

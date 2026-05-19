@@ -4,7 +4,6 @@ import path from 'path';
 import { chromium } from '@playwright/test';
 import OpenAI from 'openai';
 
-const AI_MODEL = 'gpt-4o';
 const MAX_ARIA_CHARS = 5_000;   // per section
 const MAX_TOTAL_CHARS = 22_000; // total ARIA content sent to GPT-4o (~5500 tokens)
 const MAX_TABS = 8;
@@ -19,7 +18,11 @@ function loadConfig() {
     console.error('Помилка: OPENAI_API_KEY не встановлений у .env файлі.');
     process.exit(1);
   }
-  return { apiKey };
+  return {
+    apiKey,
+    baseURL: process.env.OPENAI_BASE_URL || undefined,
+    model:   process.env.OPENAI_MODEL    || 'gpt-4o',
+  };
 }
 
 function printUsage() {
@@ -79,7 +82,7 @@ async function main() {
   if (!opts.url) { printUsage(); process.exit(0); }
 
   const config = loadConfig();
-  const client = new OpenAI({ apiKey: config.apiKey });
+  const client = new OpenAI({ apiKey: config.apiKey, baseURL: config.baseURL });
   const systemPrompt = await fs.readFile(path.resolve('prompts/explorer-seed.md'), 'utf8');
 
   const browser = await chromium.launch({ headless: true });
@@ -166,7 +169,7 @@ async function main() {
   console.log(`\nГенерую план тестування (${trimmedSections.length} секцій)...`);
 
   const resp = await client.chat.completions.create({
-    model: AI_MODEL,
+    model: config.model,
     messages: [
       { role: 'system', content: systemPrompt },
       { role: 'user',   content: userContent },
