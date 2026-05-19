@@ -7,6 +7,10 @@ const REQUEST_TIMEOUT_MS = 30_000;
 const OUTPUT_TTL_MS = 60 * 60 * 1000; // 1 hour
 const MIN_FILE_SIZE = 50;
 
+let _client = null;
+let _model = null;
+let _systemPrompt = null;
+
 function loadConfig() {
   const apiKey = process.env.OPENAI_API_KEY;
   if (!apiKey) {
@@ -18,6 +22,22 @@ function loadConfig() {
     apiKey,
     model: process.env.OPENAI_MODEL || 'gpt-4o-mini',
   };
+}
+
+function getClient() {
+  if (!_client) {
+    const config = loadConfig();
+    _client = new OpenAI({ apiKey: config.apiKey });
+    _model = config.model;
+  }
+  return { client: _client, model: _model };
+}
+
+async function getSystemPrompt() {
+  if (!_systemPrompt) {
+    _systemPrompt = await fs.readFile(path.resolve('prompts/codegen-to-testrail.md'), 'utf8');
+  }
+  return _systemPrompt;
 }
 
 function validateSpec(content, filePath) {
@@ -53,17 +73,20 @@ async function callOpenAI(client, model, systemPrompt, specContent) {
   for (let attempt = 1; attempt <= RETRY_ATTEMPTS; attempt++) {
     try {
       const response = await Promise.race([
-        client.responses.create({
+        client.chat.completions.create({
           model,
-          instructions: systemPrompt,
-          input: specContent,
+          response_format: { type: 'json_object' },
+          messages: [
+            { role: 'system', content: systemPrompt },
+            { role: 'user',   content: specContent },
+          ],
         }),
         new Promise((_, reject) =>
           setTimeout(() => reject(new Error('Таймаут запиту (30с)')), REQUEST_TIMEOUT_MS)
         ),
       ]);
 
-      return response.output_text;
+      return response.choices[0].message.content;
     } catch (err) {
       lastError = err;
       const status = err?.status ?? err?.response?.status;
@@ -100,9 +123,10 @@ function casesToCsv(cases) {
 
   const rows = cases.map(c => {
     const steps = Array.isArray(c.steps) ? c.steps.join('\n') : String(c.steps ?? '');
-    const expected = Array.isArray(c.expected_results)
-      ? c.expected_results.join('\n')
-      : String(c.expected_results ?? '');
+    const expectedRaw = c.expectedResults ?? c.expected_results;
+    const expected = Array.isArray(expectedRaw)
+      ? expectedRaw.join('\n')
+      : String(expectedRaw ?? '');
 
     return [
       c.section,
@@ -121,9 +145,7 @@ function casesToCsv(cases) {
 }
 
 export async function convertFile(filePath, { force = false } = {}) {
-  const config = loadConfig();
-  const client = new OpenAI({ apiKey: config.apiKey });
-
+  const { client, model } = getClient();
   const basename = path.basename(filePath, path.extname(filePath));
   const outputDir = path.resolve('ai-output');
   const debugDir = path.join(outputDir, 'debug');
@@ -156,12 +178,9 @@ export async function convertFile(filePath, { force = false } = {}) {
     return { skipped: true, tokens: 0 };
   }
 
-  // Load system prompt
-  const promptPath = path.resolve('prompts/codegen-to-testrail.md');
-  const systemPrompt = await fs.readFile(promptPath, 'utf8');
-
   // Call AI
-  const rawResponse = await callOpenAI(client, config.model, systemPrompt, content);
+  const systemPrompt = await getSystemPrompt();
+  const rawResponse = await callOpenAI(client, model, systemPrompt, content);
 
   // Parse response
   const cleaned = cleanJsonResponse(rawResponse);

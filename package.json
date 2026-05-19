@@ -4,8 +4,13 @@
   "description": "Convert Playwright Codegen recordings to TestRail test cases via OpenAI",
   "type": "module",
   "scripts": {
+    "ai:explore":  "node scripts/explorer.mjs",
+    "ai:scan":     "node scripts/scanner.mjs",
+    "ai:run":      "node scripts/runner.mjs",
+    "ai:heal":     "node scripts/healer.mjs",
     "ai:testrail": "node scripts/cli.mjs",
-    "ai:watch": "node scripts/watch.mjs"
+    "generate":    "node scripts/cli.mjs",
+    "ai:watch":    "node scripts/watch.mjs"
   },
   "dependencies": {
     "chokidar": "^3.6.0",
